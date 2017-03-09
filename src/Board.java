@@ -1,9 +1,7 @@
 
 import java.awt.Graphics;
 import java.awt.Dimension;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -20,6 +18,7 @@ public class Board extends JPanel {
     private char square[][];
     private GoldPieces gold = new GoldPieces();
     private SilverPieces silver = new SilverPieces();
+    private int validClick = 0;
 
     public Board() {
         setPreferredSize(new Dimension(1000, 1000));
@@ -131,12 +130,9 @@ public class Board extends JPanel {
         }
     }
 
-    private class LineListener implements MouseListener, MouseMotionListener {
+    private class LineListener implements MouseListener{
 
         public void mousePressed(MouseEvent event) {
-        }
-
-        public void mouseDragged(MouseEvent event) {
         }
 
         public void mouseReleased(MouseEvent event) {
@@ -150,9 +146,5 @@ public class Board extends JPanel {
 
         public void mouseExited(MouseEvent event) {
         }
-
-        public void mouseMoved(MouseEvent event) {
-        }
-
     }
 }
