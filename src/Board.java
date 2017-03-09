@@ -1,6 +1,9 @@
 
 import java.awt.Graphics;
 import java.awt.Dimension;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -126,5 +129,30 @@ public class Board extends JPanel {
                 }
             }
         }
+    }
+
+    private class LineListener implements MouseListener, MouseMotionListener {
+
+        public void mousePressed(MouseEvent event) {
+        }
+
+        public void mouseDragged(MouseEvent event) {
+        }
+
+        public void mouseReleased(MouseEvent event) {
+        }
+
+        public void mouseClicked(MouseEvent event) {
+        }
+
+        public void mouseEntered(MouseEvent event) {
+        }
+
+        public void mouseExited(MouseEvent event) {
+        }
+
+        public void mouseMoved(MouseEvent event) {
+        }
+
     }
 }
