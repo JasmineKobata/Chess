@@ -69,16 +69,14 @@ public class Board extends JPanel {
             square[i][6] = 'P';
             square[i][1] = 'p';
         }
-        square[0][7] = square[7][7] = 'R';
-        square[1][7] = square[6][7] = 'H';
-        square[2][7] = square[5][7] = 'B';
-        square[3][7] = 'K';
-        square[4][7] = 'Q';
-        square[0][0] = square[7][0] = 'r';
-        square[1][0] = square[6][0] = 'h';
-        square[2][0] = square[5][0] = 'b';
-        square[3][0] = 'k';
-        square[4][0] = 'q';
+
+        char[] pieces = {'R', 'H', 'B', 'K', 'Q', 'B', 'H', 'R'};
+        for (int i = 0; i < pieces.length; i++) {
+            square[i][7] = Character.toUpperCase(pieces[i]);
+        }
+        for (int i = 0; i < pieces.length; i++) {
+            square[i][0] = Character.toLowerCase(pieces[i]);
+        }
     }
 
     //Sets Pieces into array & draws them
