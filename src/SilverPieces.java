@@ -22,27 +22,27 @@ public class SilverPieces extends JPanel {
         }
     }
 
-    public void King(Graphics g, int x, int y) {
+    public void KingImg(Graphics g, int x, int y) {
         g.drawImage(king, x, y, this);
     }
 
-    public void Queen(Graphics g, int x, int y) {
+    public void QueenImg(Graphics g, int x, int y) {
         g.drawImage(queen, x, y, this);
     }
 
-    public void Bishop(Graphics g, int x, int y) {
+    public void BishopImg(Graphics g, int x, int y) {
         g.drawImage(bishop, x, y, this);
     }
 
-    public void Knight(Graphics g, int x, int y) {
+    public void KnightImg(Graphics g, int x, int y) {
         g.drawImage(knight, x, y, this);
     }
 
-    public void Rook(Graphics g, int x, int y) {
+    public void RookImg(Graphics g, int x, int y) {
         g.drawImage(rook, x, y, this);
     }
 
-    public void Pawn(Graphics g, int x, int y) {
+    public void PawnImg(Graphics g, int x, int y) {
         g.drawImage(pawn, x, y, this);
     }
 }

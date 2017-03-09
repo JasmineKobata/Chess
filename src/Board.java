@@ -1,10 +1,12 @@
 
 import java.awt.Graphics;
 import java.awt.Dimension;
+import java.awt.Point;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import javax.swing.JPanel;
 import javax.imageio.ImageIO;
 
@@ -15,14 +17,24 @@ import javax.imageio.ImageIO;
 public class Board extends JPanel {
 
     private BufferedImage wood, mop;
-    private char square[][];
+    public static char square[][];
     private GoldPieces gold = new GoldPieces();
     private SilverPieces silver = new SilverPieces();
     private int validClick = 0;
+    public static boolean select = false;
+    public static boolean pawnFirstMove[];
+    public static Point choosePiece = new Point();
+    private MovePieces move = new MovePieces();
+    private Graphics gr;
 
     public Board() {
+        LineListener listener = new LineListener();
+        addMouseListener(listener);
+
         setPreferredSize(new Dimension(1000, 1000));
         square = new char[8][8];
+        pawnFirstMove = new boolean[8];
+        Arrays.fill(pawnFirstMove, true);
         try {
             wood = ImageIO.read(new File(System.getProperty("user.dir") + "/Mahogany.jpg"));
             mop = ImageIO.read(new File(System.getProperty("user.dir") + "/mopth.jpg"));
@@ -31,10 +43,12 @@ public class Board extends JPanel {
     }
 
     public void paintComponent(Graphics g) {
+        gr = g;
         super.paintComponent(g);
         drawBoard(g);
         newBoard(g);
         drawPieces(g);
+        move.GoldHighlight(g);
     }
 
     //Draws the Wooden Board
@@ -86,40 +100,40 @@ public class Board extends JPanel {
                 int y = (u + 1) * 100;
                 switch (square[i][u]) {
                     case 'K':
-                        gold.King(g, x, y);
+                        gold.KingImg(g, x, y);
                         break;
                     case 'Q':
-                        gold.Queen(g, x, y);
+                        gold.QueenImg(g, x, y);
                         break;
                     case 'B':
-                        gold.Bishop(g, x, y);
+                        gold.BishopImg(g, x, y);
                         break;
                     case 'H':
-                        gold.Knight(g, x, y);
+                        gold.KnightImg(g, x, y);
                         break;
                     case 'R':
-                        gold.Rook(g, x, y);
+                        gold.RookImg(g, x, y);
                         break;
                     case 'P':
-                        gold.Pawn(g, x, y);
+                        gold.PawnImg(g, x, y);
                         break;
                     case 'k':
-                        silver.King(g, x, y);
+                        silver.KingImg(g, x, y);
                         break;
                     case 'q':
-                        silver.Queen(g, x, y);
+                        silver.QueenImg(g, x, y);
                         break;
                     case 'b':
-                        silver.Bishop(g, x, y);
+                        silver.BishopImg(g, x, y);
                         break;
                     case 'h':
-                        silver.Knight(g, x, y);
+                        silver.KnightImg(g, x, y);
                         break;
                     case 'r':
-                        silver.Rook(g, x, y);
+                        silver.RookImg(g, x, y);
                         break;
                     case 'p':
-                        silver.Pawn(g, x, y);
+                        silver.PawnImg(g, x, y);
                         break;
                     default:
                         break;
@@ -128,7 +142,7 @@ public class Board extends JPanel {
         }
     }
 
-    private class LineListener implements MouseListener{
+    private class LineListener implements MouseListener {
 
         public void mousePressed(MouseEvent event) {
         }
@@ -137,6 +151,8 @@ public class Board extends JPanel {
         }
 
         public void mouseClicked(MouseEvent event) {
+            choosePiece = event.getPoint();
+            repaint();
         }
 
         public void mouseEntered(MouseEvent event) {
