@@ -7,6 +7,7 @@ import java.io.IOException;
 import javax.swing.JPanel;
 import javax.imageio.ImageIO;
 
+// HAI LOVE YOU!! :>
 public class Board extends JPanel {
 
     private BufferedImage wood, mop;
