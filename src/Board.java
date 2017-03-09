@@ -13,6 +13,7 @@ public class Board extends JPanel {
     private BufferedImage wood, mop;
     private char square[][];
     private GoldPieces gold = new GoldPieces();
+    private SilverPieces silver = new SilverPieces();
 
     public Board() {
         setPreferredSize(new Dimension(1000, 1000));
@@ -67,11 +68,11 @@ public class Board extends JPanel {
         square[4][7] = 'Q';
         square[0][1] = square[1][1] = square[2][1] = square[3][1] = square[4][1] = 'p';
         square[5][1] = square[6][1] = square[7][1] = 'p';
-        square[0][7] = square[7][7] = 'R';
-        square[1][7] = square[6][7] = 'H';
-        square[2][7] = square[5][7] = 'B';
-        square[3][7] = 'K';
-        square[4][7] = 'Q';
+        square[0][0] = square[7][0] = 'r';
+        square[1][0] = square[6][0] = 'h';
+        square[2][0] = square[5][0] = 'b';
+        square[3][0] = 'k';
+        square[4][0] = 'q';
     }
 
     //Sets Pieces into array & draws them
@@ -85,17 +86,35 @@ public class Board extends JPanel {
                     case 'Q':
                         gold.Queen(g, i + 1, u + 1);
                         break;
-                    case 'b':
+                    case 'B':
                         gold.Bishop(g, i + 1, u + 1);
                         break;
-                    case 'h':
+                    case 'H':
                         gold.Knight(g, i + 1, u + 1);
                         break;
-                    case 'r':
+                    case 'R':
                         gold.Rook(g, i + 1, u + 1);
                         break;
-                    case 'p':
+                    case 'P':
                         gold.Pawn(g, i + 1, u + 1);
+                        break;
+                        case 'k':
+                        silver.King(g, i + 1, u + 1);
+                        break;
+                    case 'q':
+                        silver.Queen(g, i + 1, u + 1);
+                        break;
+                    case 'b':
+                        silver.Bishop(g, i + 1, u + 1);
+                        break;
+                    case 'h':
+                        silver.Knight(g, i + 1, u + 1);
+                        break;
+                    case 'r':
+                        silver.Rook(g, i + 1, u + 1);
+                        break;
+                    case 'p':
+                        silver.Pawn(g, i + 1, u + 1);
                         break;
                     default:
                         break;

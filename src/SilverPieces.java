@@ -12,12 +12,12 @@ public class SilverPieces extends JPanel {
 
     public SilverPieces() {
         try {
-            king = ImageIO.read(new File("C:/Users/Jasmine/Documents/NetBeansProjects/Chess/GKing.png"));
-            queen = ImageIO.read(new File("C:/Users/Jasmine/Documents/NetBeansProjects/Chess/GQueen.png"));
-            bishop = ImageIO.read(new File("C:/Users/Jasmine/Documents/NetBeansProjects/Chess/GBishop.png"));
-            knight = ImageIO.read(new File("C:/Users/Jasmine/Documents/NetBeansProjects/Chess/GKnight.png"));
-            rook = ImageIO.read(new File("C:/Users/Jasmine/Documents/NetBeansProjects/Chess/GRook.png"));
-            pawn = ImageIO.read(new File("C:/Users/Jasmine/Documents/NetBeansProjects/Chess/GPawn.png"));
+            king = ImageIO.read(new File("C:/Users/Jasmine/Documents/NetBeansProjects/Chess/SKing.png"));
+            queen = ImageIO.read(new File("C:/Users/Jasmine/Documents/NetBeansProjects/Chess/SQueen.png"));
+            bishop = ImageIO.read(new File("C:/Users/Jasmine/Documents/NetBeansProjects/Chess/SBishop.png"));
+            knight = ImageIO.read(new File("C:/Users/Jasmine/Documents/NetBeansProjects/Chess/SKnight.png"));
+            rook = ImageIO.read(new File("C:/Users/Jasmine/Documents/NetBeansProjects/Chess/SRook.png"));
+            pawn = ImageIO.read(new File("C:/Users/Jasmine/Documents/NetBeansProjects/Chess/SPawn.png"));
         } catch (IOException e) {
         }
     }
