@@ -22,8 +22,8 @@ public class Board extends JPanel {
         setPreferredSize(new Dimension(1000, 1000));
         square = new char[8][8];
         try {
-            wood = ImageIO.read(new File("C:/Users/Jasmine/Documents/NetBeansProjects/Chess/Mahogany.jpg"));
-            mop = ImageIO.read(new File("C:/Users/Jasmine/Documents/NetBeansProjects/Chess/mopth.jpg"));
+            wood = ImageIO.read(new File("../Mahogany.jpg"));
+            mop = ImageIO.read(new File("../mopth.jpg"));
         } catch (IOException e) {
         }
     }
