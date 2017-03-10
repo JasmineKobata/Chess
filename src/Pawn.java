@@ -10,7 +10,10 @@ public class Pawn {
         y = (y + 1) * 100;
         if (Board.choosePiece.x > x && Board.choosePiece.x < x + 100
                 && Board.choosePiece.y > y && Board.choosePiece.y < y + 100 && Board.select == true) {
-            blue.Squares(g, x, y);
+            blue.Highlight(g, x, y);
+            if (Board.firstMove[x] == true) {
+                blue.Highlight(g, i, u - 200);
+            }
         }
     }
 }
