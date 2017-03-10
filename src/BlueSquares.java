@@ -18,7 +18,7 @@ public class BlueSquares extends JPanel {
     }
 
     //Draws Blue Squares
-    public void Squares(Graphics g, int x, int y) {
+    public void Highlight(Graphics g, int x, int y) {
         g.drawImage(blue, x, y, 100, 100, this);
     }
 }
